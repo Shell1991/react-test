@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Router, Route, Switch} from "react-router-dom";
+import { HashRouter,BrowserRouter, Router, Route, Switch} from "react-router-dom";
 // import createHistory from "history/createHashHistory";     //锚点模式history
 import "antd/dist/antd.css";
 import PCIndex from "./js/PC_index";
@@ -12,7 +12,13 @@ export default class Root extends React.Component{
         return (
             <div>
                 <MediaQuery query="(min-device-width:1224px)">
-                    <PCIndex/>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={PCIndex}></Route>
+                            {/*<Route path="/details/:uniquekey" component={PCNewsDetails}></Route>*/}
+                            {/*<Route path="/usercenter" component={PCUserCenter}></Route>*/}
+                        </Switch>
+                    </BrowserRouter>
                 </MediaQuery>
                 <MediaQuery query="(max-device-width:1224px)">
                     <MobileIndex/>
