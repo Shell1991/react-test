@@ -21,6 +21,8 @@
     "file-loader": "^2.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "mapv": "^2.0.31",
+    "ol": "^5.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-responsive": "^5.0.0",

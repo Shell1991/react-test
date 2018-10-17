@@ -7,18 +7,21 @@ import MobileIndex from "./js/mobile_index";
 import MediaQuery from "react-responsive";
 // const history = createHistory();
 
+import DemoIndex from "./js/demoIndex";
+
 export default class Root extends React.Component{
     render(){
         return (
-            <div>
+            <div style={{width:"100%", height:"100%"}}>
                 <MediaQuery query="(min-device-width:1224px)">
-                    <BrowserRouter>
+                    <HashRouter>
                         <Switch>
-                            <Route exact path="/" component={PCIndex}></Route>
+                            <Route path="/home" component={PCIndex}></Route>
+                            <Route path="/demo" component={DemoIndex}></Route>
                             {/*<Route path="/details/:uniquekey" component={PCNewsDetails}></Route>*/}
                             {/*<Route path="/usercenter" component={PCUserCenter}></Route>*/}
                         </Switch>
-                    </BrowserRouter>
+                    </HashRouter>
                 </MediaQuery>
                 <MediaQuery query="(max-device-width:1224px)">
                     <MobileIndex/>

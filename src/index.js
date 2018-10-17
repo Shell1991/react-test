@@ -7,3 +7,4 @@ ReactDOM.render(
     <Root/>,
     document.getElementById('app-root')
 );
+
