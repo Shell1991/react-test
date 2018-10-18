@@ -7,7 +7,8 @@ import MobileIndex from "./js/mobile_index";
 import MediaQuery from "react-responsive";
 // const history = createHistory();
 
-import DemoIndex from "./js/demoIndex";
+import BaiduHoneycombDemoIndex from "./js/baiduHoneycombDemoIndex";
+import TencentHoneycombDemoIndex from "./js/tencentHoneycombDemoIndex";
 
 export default class Root extends React.Component{
     render(){
@@ -17,7 +18,8 @@ export default class Root extends React.Component{
                     <HashRouter>
                         <Switch>
                             <Route path="/home" component={PCIndex}></Route>
-                            <Route path="/demo" component={DemoIndex}></Route>
+                            <Route path="/baiduHoneycombDemoIndex" component={BaiduHoneycombDemoIndex}></Route>
+                            <Route path="/tencentHoneycombDemoIndex" component={TencentHoneycombDemoIndex}/>
                             {/*<Route path="/details/:uniquekey" component={PCNewsDetails}></Route>*/}
                             {/*<Route path="/usercenter" component={PCUserCenter}></Route>*/}
                         </Switch>
