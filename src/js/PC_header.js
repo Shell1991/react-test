@@ -1,6 +1,6 @@
 import React from "react";
-import {Row, Col, Menu, Icon, Tabs, message, Form, Input, Modal, Button, Checkbox} from "antd";
-import { Link } from 'react-router-dom';
+import {Button, Col, Form, Icon, Input, Menu, message, Modal, Row, Tabs} from "antd";
+import {Link, Route} from 'react-router-dom';
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -135,9 +135,9 @@ class PCHeader extends React.Component{
             <Menu.Item key="logout" className="register">
                 <Button type="primary" htmlType="button">{this.state.userNickName}</Button>
                 &nbsp;&nbsp;
-                {/*<Link target="_black">*/}
+                <Link target="_black" to="/usercenter">
                     <Button type="dashed" htmlType="button">个人中心</Button>
-                {/*</Link>*/}
+                </Link>
                 &nbsp;&nbsp;
                 <Button type="ghost" htmlType="button" onClick={this.handleLogout.bind(this)}>退出</Button>
             </Menu.Item>
@@ -156,7 +156,7 @@ class PCHeader extends React.Component{
             },
         };
         return (
-            <header>
+            <header className="pc-header">
                 <Row>
                     <Col span={2}></Col>
                     <Col span={4} className="logo">
@@ -164,34 +164,35 @@ class PCHeader extends React.Component{
                         <span>ReactNews</span>
                     </Col>
                     <Col span={16}>
-                        <Menu selectedKeys={[this.state.current]} onClick={this.handleClick.bind(this)} mode="horizontal" style={{width:"100%"}}>
-                            <Menu.Item key="top" style={{width:"8%"}}>
-                                <Icon type="appstore"/>头条
-                            </Menu.Item>
-                            <Menu.Item key="shehui" style={{width:"9%"}}>
-                                <Icon type="profile"/>社会
-                            </Menu.Item>
-                            <Menu.Item key="guonei" style={{width:"9%"}}>
-                                <Icon type="read"/>国内
-                            </Menu.Item>
-                            <Menu.Item key="guoji" style={{width:"9%"}}>
-                                <Icon type="project"/>国际
-                            </Menu.Item>
-                            <Menu.Item key="yule" style={{width:"9%"}}>
-                                <Icon type="shopping"/>娱乐
-                            </Menu.Item>
-                            <Menu.Item key="tiyu" style={{width:"9%"}}>
-                                <Icon type="idcard"/>体育
-                            </Menu.Item>
-                            <Menu.Item key="keji" style={{width:"9%"}}>
-                                <Icon type="switcher"/>科技
-                            </Menu.Item>
-                            <Menu.Item key="shishang" style={{width:"9%"}}>
-                                <Icon type="schedule"/>时尚
-                            </Menu.Item>
-                            {userShow}
-                        </Menu>
-
+                        <Route>
+                            <Menu selectedKeys={[this.state.current]} onClick={this.handleClick.bind(this)} mode="horizontal" style={{width:"100%"}}>
+                                <Menu.Item key="top" style={{width:"8%"}}>
+                                    <Icon type="appstore"/>头条
+                                </Menu.Item>
+                                <Menu.Item key="shehui" style={{width:"9%"}}>
+                                    <Icon type="profile"/>社会
+                                </Menu.Item>
+                                <Menu.Item key="guonei" style={{width:"9%"}}>
+                                    <Icon type="read"/>国内
+                                </Menu.Item>
+                                <Menu.Item key="guoji" style={{width:"9%"}}>
+                                    <Icon type="project"/>国际
+                                </Menu.Item>
+                                <Menu.Item key="yule" style={{width:"9%"}}>
+                                    <Icon type="shopping"/>娱乐
+                                </Menu.Item>
+                                <Menu.Item key="tiyu" style={{width:"9%"}}>
+                                    <Icon type="idcard"/>体育
+                                </Menu.Item>
+                                <Menu.Item key="keji" style={{width:"9%"}}>
+                                    <Icon type="switcher"/>科技
+                                </Menu.Item>
+                                <Menu.Item key="shishang" style={{width:"9%"}}>
+                                    <Icon type="schedule"/>时尚
+                                </Menu.Item>
+                                {userShow}
+                            </Menu>
+                        </Route>
                         <Modal title="用户中心" wrapClassName="vertical-center-modal"
                                visible={this.state.modalVisible}
                                onCancel={()=>{this.setModalVisible(false)}}

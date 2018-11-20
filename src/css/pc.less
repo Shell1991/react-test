@@ -1,9 +1,12 @@
+html{
+  font-size: 50px;
+}
 .ant-btn{
   font-size: 12px;
   padding:3px 6px;
   height:30px;
 }
-header{
+pc-header{
   font-size: 2rem;
 }
 .logo{
@@ -26,10 +29,167 @@ header{
 }
 .newsContainer{
   margin-top: 1%;
-  width: 25%;
+  width: 30%;
   float: left;
 
   img{
     width:100%;
   }
+}
+.tabs{
+  width:35%;
+  float: left;
+  margin-left:10px;
+}
+
+a,ul,li{
+  text-decoration: none;
+  list-style: none;
+  color: #333333;
+  padding:3px;
+  margin:0;
+  display: inline-block;
+}
+.ant-menu-horizontal > .ant-menu-item > a{
+  display: inline-block;
+}
+.ant-tabs-bar{
+  margin: 0 0 15px 0
+}
+
+.ant-card-head{
+  padding:0 20px;
+  min-height: 40px;
+}
+//.ant-card-head-title{
+//  padding:10px 0;
+//}
+.ant-card-body{
+  padding:10px;
+}
+
+.imageBlock{
+  float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 11px;
+}
+.imageBlock a{
+  display: block;
+}
+
+.custom-card p{
+  color: #999;
+  margin:0;
+}
+
+/**Article Content**/
+
+.container{
+  text-align: center;
+}
+
+.article {
+  text-align: justify
+}
+
+.article-content .img .img-wrap,.hot-news img {
+  background-repeat: no-repeat;
+  background-position: center
+}
+
+.hn-title h2,.in-title h2 {
+  z-index: 1;
+  font-weight: 600
+}
+
+#title {
+  margin: 16px 16px 0!important;
+  border-bottom: 1px solid #e5e5e5
+}
+
+.article-title {
+  margin-bottom: .2rem
+}
+
+#title .title,.article-title .title {
+  font-size: 0.5rem;
+  line-height: 1.4em
+}
+
+.title {
+  color: #000
+}
+
+.article-src-time {
+  font-size: 0.3rem;
+  color: #999;
+  padding-bottom: .2rem
+}
+
+.article-content .section {
+  line-height: 1.6em;
+  margin-bottom: .3rem;
+  margin-top: 0
+}
+
+.article-content .txt {
+  font-size: 0.35rem
+}
+
+.article-content .img {
+  margin-bottom: .3rem
+}
+
+.article-content .img .img-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-size: 40%
+}
+
+#content {
+  margin: .3rem 16px 16px
+}
+
+.article-content .img .img-wrap img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60%
+}
+
+.article-content .img .txt-wrap {
+  font-size: .36rem;
+  line-height: 2em
+}
+
+.article-content .app-download {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: .8rem;
+  text-align: center;
+  color: red;
+  line-height: .8rem;
+  border: 1px solid #e5e5e5;
+  border-top: 0 none;
+  font-size: .34rem
+}
+
+.article-content .app-download img {
+  position: absolute;
+  width: .42rem;
+  height: .42rem;
+  margin-right: .15rem;
+  top: 50%;
+  margin-top: -.21rem;
+  left: .66rem
+}
+
+.ant-row{
+  padding-top: 15px;
 }

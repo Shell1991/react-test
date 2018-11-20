@@ -1,10 +1,11 @@
 import OpenLayers from "./OpenLayers";
 
 var commonFunc = {
+    //WGS-84椭球的长半径、短半径和扁率
     VincentyConstants: {
-        a: 6378137,
-        b: 6356752.3142,
-        f: 1 / 298.257223563
+        a: 6378137,//长半径
+        b: 6356752.3142,//短半径
+        f: 1 / 298.257223563//扁率
     },
     /**
      *Calculate destination point given start point lat/long (numeric degrees),

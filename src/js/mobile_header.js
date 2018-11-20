@@ -1,5 +1,6 @@
 import React from "react";
-import {Row, Col, Menu, Icon, Tabs, message, Form, Input, Modal, Button, Checkbox} from "antd";
+import {Button, Form, Icon, Input, message, Modal, Tabs} from "antd";
+import {Link, Route} from 'react-router-dom';
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -84,9 +85,9 @@ class MobileHeader extends React.Component{
         let { getFieldProps } = this.props.form;
         const userShow = this.state.hasLogin
             ?
-            //<Link>
+            <Link to="/usercenter">
                 <Icon type="inbox" />
-            // </Link>
+            </Link>
             :
             <Icon type="setting" onClick={this.handleClick.bind(this)} />;
         const formItemLayout = {
@@ -100,10 +101,12 @@ class MobileHeader extends React.Component{
             },
         };
         return (
-            <header>
-                <img src="./src/images/logo.png" alt="logo" />
-                <span>ReactNews</span>
-                {userShow}
+            <header className="mobile-header">
+                <img src="./src/images/logo.png" alt="logo" onClick={()=>{location.href="#"}} />
+                <span onClick={()=>{location.href="#"}}>ReactNews</span>
+                <Route>
+                    {userShow}
+                </Route>
                 <Modal title="用户中心" wrapClassName="vertical-center-modal"
                        visible={this.state.modalVisible}
                        onCancel={()=>{this.setModalVisible(false)}}
